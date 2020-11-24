@@ -1,0 +1,24 @@
+CREATE DATABASE celso-lisboa;
+
+CREATE TABLE public.courses (
+	id serial NOT NULL,
+	nome varchar NOT NULL,
+	professor varchar NOT NULL,
+	sala varchar NOT NULL,
+	hora_inicio varchar NOT NULL,
+	hora_fim varchar NOT NULL,
+	"createdAt" timestamp NOT NULL DEFAULT now(),
+	"updatedAt" timestamp NOT NULL DEFAULT now(),
+	CONSTRAINT "PK_3f70a487cc718ad8eda4e6d58c9" PRIMARY KEY (id),
+	CONSTRAINT "UQ_194de71921794791824eb554915" UNIQUE (nome)
+);
+
+CREATE TABLE public.users (
+	id serial NOT NULL,
+	email varchar NOT NULL,
+	"password" varchar NOT NULL,
+	"createdAt" timestamp NOT NULL DEFAULT now(),
+	"updatedAt" timestamp NOT NULL DEFAULT now(),
+	CONSTRAINT "PK_a3ffb1c0c8416b9fc6f907b7433" PRIMARY KEY (id),
+	CONSTRAINT "UQ_97672ac88f789774dd47f7c8be3" UNIQUE (email)
+);
